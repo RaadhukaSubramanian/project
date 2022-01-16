@@ -25,6 +25,14 @@ const CountryDetails = new GraphQLObjectType({
   }
 });
 
+const CountryList = new GraphQLObjectType({
+  name: "CountryList",
+  fields: {
+    data: { type: new GraphQLList(CountryDetails) },
+    total: { type: GraphQLString }
+  }
+});
+
 
 const EducationDetails = new GraphQLObjectType({
   name: "EducationDetails",
@@ -52,4 +60,5 @@ exports.CountryDetails = CountryDetails;
 exports.UserDetails = UserDetails;
 exports.EducationDetails = EducationDetails;
 exports.UserCompleteDetails = UserCompleteDetails;
+exports.CountryList = CountryList;
 
